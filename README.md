@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web app created using [ReactJS](https://reactjs.org) and [Leaflet](https://leafletjs.com/) which allows user to interactively create routes (polylines) by providing stops (latitude and longitude).
 
-## Available Scripts
+# Getting Started
 
-In the project directory, you can run:
+Clone this repo in your local file system.
 
-### `npm start`
+## Running the app
+In the project directory:
 
-Runs the app in the development mode.\
+1. Install dependencies
+> npm install
+
+2. Run the app in the development mode.
+> npm start
+
+- You will see some warnings for leaflet package.
+
+3. Access the app\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload if you make edits.
 
-### `npm test`
+## App usage
+Once app is up and running user will get a web page as shown below.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://user-images.githubusercontent.com/6827941/192094096-627b21c9-37cc-4f34-a736-4ab22c1f048e.png)
 
-### `npm run build`
+### Basic usage
+1. Scroll and drag to zoom and pan on the map.
+2. Create route by clicking on `Add Route` button.
+  - This will add a route with auto generated name and id and no stops.
+3. Edit a route by clicking on the route header (shaded bar where the route name appears)
+  - This will open a form where user can add/update/delete stops.
+  - The map will show stops on the maps as solid dots as the user provides the latitude and longitude.
+  - Clicking on the dot will show a popup with stop details.
+  - Polylines will start showing on the map as soon as more than 1 stop is added.
+  - Delete a stop by clicking on the trash icon beside it.
+4. Delete a route by clicking on trash icon on the bar showing route name.
+5. Export created routes by click on the ![image](https://user-images.githubusercontent.com/6827941/192095150-aa6fb76e-8a6f-43e1-9f0d-a60712cd46b5.png)
+icon on the right of `Routes` header.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Usability interactions
+- Clicking on the route header will collapse/expand the corresponding route form.
+- Active routes are shown in green and inactive ones in red on the left pane.
+- Similarly, lines and dots on map are green if the route is active and red if route is inactive.
+- Clicking on ![image](https://user-images.githubusercontent.com/6827941/192095271-b6a7c9fb-1656-4522-9d80-db10ca17ce67.png)
+ icon on route header will recenter the map to the starting point of route. This is handy if the route is currently not on the screen.
+- User can reset the map to default location (Bangalore) and default zoom by clicking on the ![image](https://user-images.githubusercontent.com/6827941/192095304-58a7e064-fe20-477a-984d-a2a4a1ee84bc.png)
+icon in the `Map Center` section.
+- If you ever forget any of the above simply hover on icons to get a tooltip :)
